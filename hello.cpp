@@ -5,6 +5,12 @@
 using namespace std;
 
 int main() {
-  cout << "Hello World!" << endl;
+  for(int i = 0; i < 10; i++) {
+    for (int j = 0; j < 4; j++) {
+      cout.width(17);
+      cout << "Hello World!";
+    }
+    cout << endl;
+  };
   return 0;
 }
