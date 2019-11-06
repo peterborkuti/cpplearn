@@ -2,16 +2,39 @@
 // Description: a program that prints the immortal saying "hello world"
 
 #include <iostream>
+#include <stdlib.h> /* srand, rand */
 using namespace std;
 
-int main() {
-  for(int i = 0; i < 10; i++) {
-    for (int j = 0; j < 4; j++) {
-      cout.flags ( std::ios::left);
-      cout.width(17);
-      cout << "Hello World!";
+int main()
+{
+  int v = rand() % 100;
+
+  int guess = 0;
+
+  while (guess != v)
+  {
+    while (!(cin >> guess))
+    {
+      cout << "You entered a wrong number" << endl;
+      cin.clear();
+      cin.ignore();
+    };
+
+    if (guess > v)
+    {
+      cout << "You entered a bigger number" << endl;
     }
-    cout << endl;
-  };
+
+    if (guess < v)
+    {
+      cout << "You entered a lower number" << endl;
+    }
+
+    if (guess == v)
+    {
+      cout << "You found it!" << endl;
+    }
+  }
+
   return 0;
 }
